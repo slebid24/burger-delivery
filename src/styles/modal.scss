@@ -1,0 +1,502 @@
+.modal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1050;
+   display: none;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   background-color: rgba(82, 67, 194, .9);
+
+
+   &__dialog {
+      width: 600px;
+      margin-left: -300px;
+      height: 300px;
+      margin-top: -180px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+   }
+
+   &__content {
+      width: 100%;
+      height: 100%;
+      padding: 16px;
+      background-color: #fff;
+      border-radius: 20px;
+   }
+
+   &__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+   }
+
+   &__topside {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__title {
+      font-family: OpenSans-SemiBold;
+      color: #1F2939;
+      font-size: 20px;
+      line-height: 27px;
+      padding-left: 26px;
+
+
+      &::before {
+         content: url(/src/images/focus-line.svg);
+         position: absolute;
+         top: 5.6%;
+         left: 2%;
+
+      }
+   }
+
+   &__closex {
+      @include reset-button;
+
+      &::after {
+         content: url(/src/images/close.svg);
+         position: absolute;
+         top: 6%;
+         left: 95%;
+      }
+   }
+
+   &__midside {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      height: 120px;
+   }
+
+   &__name {
+      width: 280px;
+      height: 52px;
+      border: 2px solid #F5F5FF;
+      border-radius: 15px;
+      position: relative;
+
+      &::after {
+         background-image: url(/src/images/name.svg);
+         background-repeat: no-repeat;
+         background-size: 25px 25px;
+         display: inline-block;
+         width: 30px;
+         height: 30px;
+         content: "";
+         position: absolute;
+         top: 13px;
+         left: 12px;
+      }
+   }
+
+   &__name-text {
+      font-family: OpenSans-Regular;
+      color: #949BA6;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      position: absolute;
+      top: 7px;
+      left: 44px;
+
+   }
+
+   &__name-input {
+      position: absolute;
+      top: 25px;
+      left: 44px;
+      border: none;
+      background: none;
+      outline: none;
+      padding: 0;
+      font-family: OpenSans-SemiBold;
+      font-size: 14px;
+      color: #1F2939;
+   }
+
+   &__number {
+      width: 280px;
+      height: 52px;
+      border: 2px solid #F5F5FF;
+      border-radius: 15px;
+      position: relative;
+
+      &::after {
+         background-image: url(/src/images/phone-fill.svg);
+         background-repeat: no-repeat;
+         background-size: 25px 25px;
+         display: inline-block;
+         width: 30px;
+         height: 30px;
+         content: "";
+         position: absolute;
+         top: 13px;
+         left: 12px;
+      }
+   }
+
+   &__number-text {
+      font-family: OpenSans-Regular;
+      color: #949BA6;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      position: absolute;
+      top: 7px;
+      left: 44px;
+   }
+
+   &__number-input {
+      position: absolute;
+      top: 25px;
+      left: 44px;
+      border: none;
+      background: none;
+      outline: none;
+      padding: 0;
+      font-family: OpenSans-SemiBold;
+      font-size: 14px;
+      color: #1F2939;
+   }
+
+   &__address {
+      width: 280px;
+      height: 52px;
+      border: 2px solid #F5F5FF;
+      border-radius: 15px;
+      position: relative;
+
+      &::after {
+         background-image: url(/src/images/route-line.svg);
+         background-repeat: no-repeat;
+         background-size: 25px 25px;
+         display: inline-block;
+         width: 30px;
+         height: 30px;
+         content: "";
+         position: absolute;
+         top: 13px;
+         left: 12px;
+      }
+   }
+
+   &__address-text {
+      font-family: OpenSans-Regular;
+      color: #949BA6;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      position: absolute;
+      top: 7px;
+      left: 44px;
+   }
+
+   &__address-input {
+      position: absolute;
+      top: 25px;
+      left: 44px;
+      border: none;
+      background: none;
+      outline: none;
+      padding: 0;
+      font-family: OpenSans-SemiBold;
+      font-size: 14px;
+      color: #1F2939;
+   }
+
+   &__time {
+      width: 280px;
+      height: 52px;
+      border: 2px solid #F5F5FF;
+      border-radius: 15px;
+      position: relative;
+   }
+
+   &__time-text {
+      font-family: OpenSans-Regular;
+      color: #949BA6;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      position: absolute;
+      top: 7px;
+      left: 14px;
+   }
+
+   &__time-input {
+      position: absolute;
+      top: 25px;
+      left: 14px;
+      border: none;
+      background: none;
+      outline: none;
+      padding: 0;
+      font-family: OpenSans-SemiBold;
+      font-size: 14px;
+      color: #1F2939;
+   }
+
+   &__botside {
+      display: flex;
+      justify-content: flex-end;
+   }
+
+   &__cancel {
+      width: 120px;
+      height: 52px;
+      margin-right: 16px;
+      @include reset-button;
+      font-family: OpenSans-SemiBold;
+      font-size: 16px;
+      background-color: #F5F5FF;
+      color: #5243C2;
+      ;
+      border-radius: 30px;
+      transition: 0.2s linear;
+
+   }
+
+   &__cancel:hover {
+      background-color: #FFC8C8;
+   }
+
+   &__sub {
+      width: 120px;
+      height: 52px;
+      @include reset-button;
+      font-family: OpenSans-SemiBold;
+      font-size: 16px;
+      color: #F5F5FF;
+      background-color: #5243C2;
+      border-radius: 30px;
+      transition: 0.2s linear;
+   }
+
+   &__sub:hover {
+      background-color: #37299e;
+   }
+
+}
+
+.modalp {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1050;
+   display: none;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   background-color: rgba(82, 67, 194, .9);
+
+
+   &__dialog-p {
+      width: 600px;
+      margin-left: -300px;
+      height: 220px;
+      margin-top: -180px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+   }
+
+   &__content-p {
+      width: 100%;
+      height: 100%;
+      padding: 16px;
+      background-color: #fff;
+      border-radius: 20px;
+   }
+
+   &__form-p {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+   }
+
+   &__topside-p {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__title-p {
+      font-family: OpenSans-SemiBold;
+      color: #1F2939;
+      font-size: 20px;
+      line-height: 27px;
+      padding-left: 26px;
+
+
+      &::before {
+         content: url(/src/images/focus-line.svg);
+         position: absolute;
+         top: 8%;
+         left: 2%;
+
+      }
+   }
+
+   &__closex-p {
+      @include reset-button;
+
+      &::after {
+         content: url(/src/images/close.svg);
+         position: absolute;
+         top: 6%;
+         left: 95%;
+      }
+   }
+
+   &__midside-p {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      height: 40px;
+   }
+
+   &__name-p {
+      width: 280px;
+      height: 52px;
+      border: 2px solid #F5F5FF;
+      border-radius: 15px;
+      position: relative;
+
+      &::after {
+         background-image: url(/src/images/name.svg);
+         background-repeat: no-repeat;
+         background-size: 25px 25px;
+         display: inline-block;
+         width: 30px;
+         height: 30px;
+         content: "";
+         position: absolute;
+         top: 13px;
+         left: 12px;
+      }
+   }
+
+   &__name-text-p {
+      font-family: OpenSans-Regular;
+      color: #949BA6;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      position: absolute;
+      top: 7px;
+      left: 44px;
+
+   }
+
+   &__name-input-p {
+      position: absolute;
+      top: 25px;
+      left: 44px;
+      border: none;
+      background: none;
+      outline: none;
+      padding: 0;
+      font-family: OpenSans-SemiBold;
+      font-size: 14px;
+      color: #1F2939;
+   }
+
+   &__number-p {
+      width: 280px;
+      height: 52px;
+      border: 2px solid #F5F5FF;
+      border-radius: 15px;
+      position: relative;
+
+      &::after {
+         background-image: url(/src/images/phone-fill.svg);
+         background-repeat: no-repeat;
+         background-size: 25px 25px;
+         display: inline-block;
+         width: 30px;
+         height: 30px;
+         content: "";
+         position: absolute;
+         top: 13px;
+         left: 12px;
+      }
+   }
+
+   &__number-text-p {
+      font-family: OpenSans-Regular;
+      color: #949BA6;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      position: absolute;
+      top: 7px;
+      left: 44px;
+   }
+
+   &__number-input-p {
+      position: absolute;
+      top: 25px;
+      left: 44px;
+      border: none;
+      background: none;
+      outline: none;
+      padding: 0;
+      font-family: OpenSans-SemiBold;
+      font-size: 14px;
+      color: #1F2939;
+   }
+
+   &__botside-p {
+      display: flex;
+      justify-content: flex-end;
+   }
+
+   &__cancel-p {
+      width: 120px;
+      height: 52px;
+      margin-right: 16px;
+      @include reset-button;
+      font-family: OpenSans-SemiBold;
+      font-size: 16px;
+      background-color: #F5F5FF;
+      color: #5243C2;
+      border-radius: 30px;
+      transition: 0.2s linear;
+   }
+
+   &__cancel-p:hover {
+      background-color: #FFC8C8;
+   }
+
+   &__sub-p {
+      width: 120px;
+      height: 52px;
+      @include reset-button;
+      font-family: OpenSans-SemiBold;
+      font-size: 16px;
+      color: #F5F5FF;
+      background-color: #5243C2;
+      border-radius: 30px;
+      transition: 0.2s linear;
+
+      &-t {
+         position: relative;
+         top: 14px;
+         left: 31px;
+      }
+   }
+
+   &__sub-p:hover {
+      background-color: #37299e;
+   }
+
+}
